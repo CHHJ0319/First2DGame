@@ -19,13 +19,7 @@ namespace Platformer.Mechanics
         public AudioClip respawnAudio;
         public AudioClip ouchAudio;
 
-        /// <summary>
-        /// Max horizontal speed of the player.
-        /// </summary>
-        public float maxSpeed = 7;
-        /// <summary>
-        /// Initial jump velocity at the start of a jump.
-        /// </summary>
+        public float maxSpeed = 5;
         public float jumpTakeOffSpeed = 7;
 
         public JumpState jumpState = JumpState.Grounded;
@@ -85,11 +79,13 @@ namespace Platformer.Mechanics
                     {
                         animator.SetBool("OnRise", false);
                         riseState = false;
+                        maxSpeed = 5;
                     }
                     else
                     {
                         animator.SetBool("OnRise", true);
                         riseState = true;
+                        maxSpeed = 3;
                     }
                 }
                 else
