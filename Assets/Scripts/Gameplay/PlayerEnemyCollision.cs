@@ -1,6 +1,7 @@
 using Platformer.Core;
 using Platformer.Mechanics;
 using Platformer.Model;
+using Platformer.UI;
 using UnityEngine;
 using static Platformer.Core.Simulation;
 
@@ -31,6 +32,7 @@ namespace Platformer.Gameplay
                     if (!enemyHealth.IsAlive)
                     {
                         Schedule<EnemyDeath>().enemy = enemy;
+                        MainUIController.Instance.UpdateEnemyKillCounter();
                         player.Bounce(2);
                     }
                     else
@@ -41,6 +43,7 @@ namespace Platformer.Gameplay
                 else
                 {
                     Schedule<EnemyDeath>().enemy = enemy;
+                    MainUIController.Instance.UpdateEnemyKillCounter();
                     player.Bounce(2);
                 }
             }

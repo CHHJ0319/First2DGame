@@ -19,8 +19,8 @@ namespace Platformer.Gameplay
                 enemyHealth.Decrement();
                 if (!enemyHealth.IsAlive)
                 {
-                    MainUIController.Instance.UpdateEnemyKillCounter();
                     Schedule<EnemyDeath>().enemy = enemy;
+                    MainUIController.Instance.UpdateEnemyKillCounter();
                 }
                 else
                 {
@@ -29,8 +29,8 @@ namespace Platformer.Gameplay
             }
             else
             {
-                MainUIController.Instance.UpdateEnemyKillCounter();
                 Schedule<EnemyDeath>().enemy = enemy;
+                MainUIController.Instance.UpdateEnemyKillCounter();
             }
 
         }
